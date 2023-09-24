@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!--h1 without bottom border-->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=56&duration=2500&pause=500&vCenter=true&width=800&height=80&lines=I'm+Umal+Manjitha)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=56&duration=2500&pause=500&vCenter=true&width=800&height=80&lines=Hello,+I'm+Umal+Manjitha)](https://git.io/typing-svg)
 <hr>
 
 <!--- snake -->
@@ -14,7 +14,7 @@
 
 
 <!--h2 without bottom border-->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=3000&pause=1500&color=F70909&center=true&vCenter=true&width=800&height=80&lines=Piracy+Shall+Live+Forever+!!)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2500&pause=1000&color=F70909&center=true&vCenter=true&width=800&height=80&lines=Piracy+Shall+Live+Forever+!!)](https://git.io/typing-svg)
 
 
 <!--Intro start-->
@@ -103,14 +103,10 @@
 <!--profile visit count-->
 <div align="center">
   
-[![](https://visitcount.itsvg.in/api?id=1010nishant&icon=3&color=6)](https://visitcount.itsvg.in)
+[![](https://visitcount.itsvg.in/api?id=manjithahhu20&icon=3&color=6)](https://visitcount.itsvg.in)
   
 </div>
 
 <!--horizontal divider(gradiant)-->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-----------------------------------------------------------------------
-Credit: [1010nishant](https://github.com/1010nishant)
-
-Last Edited on: 29/4/2023
