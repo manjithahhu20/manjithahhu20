@@ -14,11 +14,7 @@
 
 
 <!--h2 without bottom border-->
-<div id="user-content-toc">
-  <ul align="center">
-    <summary><h2 style="display: inline-block">Piracy Shall Live Forever !!</h2></summary>
-  </ul>
-</div>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=3000&pause=1500&color=F70909&center=true&vCenter=true&width=800&height=80&lines=Piracy+Shall+Live+Forever+!!)](https://git.io/typing-svg)
 
 
 <!--Intro start-->
