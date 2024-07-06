@@ -6,12 +6,12 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=56&duration=2500&pause=500&vCenter=true&width=800&height=80&lines=Hello,+I'm+Umal+Manjitha)](https://git.io/typing-svg)
 <hr>
 
-<!--- snake 
+<!--- snake --> 
 <div align="center">
-  <img  src="https://github.com/1999AZZAR/1999AZZAR/blob/main/resources/img/grid-snake.svg"
+  <img  src="https://github.com/manjithahhu20/manjithahhu20/blob/efbd8d2ac8603e1f7d2019d705bbdd2d362d38b1/github-contribution-grid-snake.svg"
        alt="snake" /></a>
 </div>
--->
+
 
 <!--h2 without bottom border-->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2500&pause=1000&color=F70909&center=true&vCenter=true&width=800&height=80&lines=Piracy+Shall+Live+Forever+!!)](https://git.io/typing-svg)
