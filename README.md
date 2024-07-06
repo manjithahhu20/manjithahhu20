@@ -18,7 +18,7 @@
 
 
 <!--Intro start-->
-- 🌐 Visit My Website **http://umal.mywire.org**
+- 🌐 Visit My Website **umal.mywire.org**
 
 - 🔭 I’m currently working on **Blender, Cinema 4D, AWS, Relational Databases**
 
