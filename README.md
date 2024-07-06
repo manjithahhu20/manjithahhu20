@@ -18,13 +18,13 @@
 
 
 <!--Intro start-->
-- 🌐 Visit My Website **http://umal.us.to**
+- 🌐 Visit My Website **http://umal.mywire.org**
 
 - 🔭 I’m currently working on **Blender, Cinema 4D, AWS, Relational Databases**
 
 - 🌱 I’m currently learning **to Mange 3D Scenes inside a Application Pipeline.**
 
-- ☁️ I've keen interest in cloud computing. So,I'm learning **AWS**
+- ☁️ I've keen interest in cloud computing. So,I'm learning **AWS, Oracle Cloud**
 
 - 📝 I regularly write articles on https://medium.com/@hhumal
 
