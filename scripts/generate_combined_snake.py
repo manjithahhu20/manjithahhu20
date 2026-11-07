@@ -319,7 +319,7 @@ def render_svg(cells: list[dict[str, Any]], owner: str, dark: bool) -> str:
     }
 
     route, eat_steps, food_order = build_classic_route(cells)
-    route_duration = max(12, min(ANIMATION_SECONDS, len(route) * 0.055))
+    route_duration = max(24, min(40, len(route) * 0.09))
     route_last = max(1, len(route) - 1)
     route_by_point = {(cell["x"], cell["y"]): cell for cell in cells}
 
