@@ -1,33 +1,54 @@
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F172A,55:0F766E,100:F59E0B&text=Umal%20Manjitha&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=3D%20artist%20%7C%20software%20builder%20%7C%20open%20water%20data&descAlignY=60&descSize=16&animation=fadeIn"
-  alt="Umal Manjitha - 3D artist, software builder, and open water data advocate"
+  src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F172A,55:0F766E,100:F59E0B&text=Umal%20Manjitha&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=Civil%20engineer%20%7C%20water-data%20builder%20%7C%20creative%20developer&descAlignY=60&descSize=16&animation=fadeIn"
+  alt="Umal Manjitha - civil engineer, water-data builder, and creative developer"
   width="100%"
 />
 
-**Building useful things at the intersection of software, 3D, and water data.**  
-Based in Colombo, Sri Lanka.
+**Civil engineering graduate building better tools for water, infrastructure, and the environment.**  
+B.Sc. Engineering (Hons.), University of Moratuwa &middot; GPA 3.30 / 4.00
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-0F766E?style=for-the-badge&logo=vercel&logoColor=white)](https://umal.netlify.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/umal-manjitha/)
-[![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@hhumal)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/manjithahhu20)
 [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0003-5220-2317)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hhumal@outlook.com)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:umalmanjitha1@gmail.com)
 
 </div>
 
 ## About me
 
-I am a 3D artist and programmer who enjoys turning messy, real-world information into tools people can actually use. My current work focuses on open hydrology and groundwater infrastructure for Sri Lanka, backed by careful data provenance, automation, and a clean public interface.
+I am a civil engineering graduate from the University of Moratuwa with experience across structural design, hydrology, geospatial analysis, and data-driven modeling. My current work focuses on open hydrology and groundwater infrastructure for Sri Lanka, combining careful engineering with reliable software.
 
-I also spend time on Blender, Cinema 4D, Three.js, geospatial systems, and full-stack web applications.
+I enjoy turning messy real-world data into tools people can use, and I also work across 3D, visualization, and full-stack web development.
 
-- **Open data for public good:** making environmental datasets easier to access, preserve, and understand.
-- **Engineering with provenance:** keeping raw inputs, transformations, and data quality visible.
-- **Creative technology:** combining 3D, interaction design, and software into thoughtful experiences.
+- **Water and environmental systems:** hydrology, flood modeling, groundwater data, and open gauge networks.
+- **Structural and geospatial engineering:** analysis, design, GIS, terrain data, and site planning.
+- **Data and software:** Python, machine learning, APIs, automation, and public-interest applications.
+- **Visual communication:** Blender, Cinema 4D, Three.js, UI/UX, and technical visualization.
 
 ---
+
+## Education and experience
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>University of Moratuwa</h3>
+      <p><strong>B.Sc. Engineering (Hons.) in Civil Engineering</strong><br />
+      2021 - 2025 &middot; GPA 3.30 / 4.00</p>
+      <p><code>Hydraulic design</code> <code>Structural analysis</code> <code>Geotechnical design</code> <code>Environmental engineering</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>State Engineering Corporation</h3>
+      <p><strong>Trainee Civil Engineer</strong><br />
+      December 2023 - July 2024<br />
+      New District Court and Magistrate's Court Complex, Galle</p>
+      <p>Worked across mass concreting, reinforcement, site documentation, planning, safety, resource management, and quality control.</p>
+    </td>
+  </tr>
+</table>
 
 ## Currently building
 
@@ -52,8 +73,45 @@ I also spend time on Blender, Cinema 4D, Three.js, geospatial systems, and full-
     </td>
     <td width="50%" valign="top">
       <h3><a href="https://github.com/manjithahhu20/my-portfolio-website">Portfolio and experiments</a></h3>
-      <p>Personal web work, interactive 3D sketches, and small experiments in visual design, JavaScript, and rendering.</p>
+      <p>Personal web work, interactive 3D sketches, and experiments in visual design, JavaScript, and rendering.</p>
       <p><code>Three.js</code> <code>JavaScript</code> <code>UI/UX</code></p>
+    </td>
+  </tr>
+</table>
+
+## Engineering and research
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>River discharge prediction</h3>
+      <p><strong>Undergraduate research project</strong><br />
+      June 2024 - July 2025</p>
+      <p>Developed and calibrated a HEC-HMS model, trained machine-learning algorithms, and compared both approaches for predicting river discharge.</p>
+      <p><code>HEC-HMS</code> <code>Python</code> <code>Machine learning</code> <code>Hydrology</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Waterfront Development, Galle</h3>
+      <p><strong>Comprehensive design project</strong><br />
+      October 2024 - July 2025</p>
+      <p>Developed the ETABS building model, completed geotechnical design, and stabilized a 15 m steep slope behind the site.</p>
+      <p><code>ETABS</code> <code>Revit</code> <code>ArcGIS</code> <code>Slope stability</code></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Flood hydrograph, Welimada</h3>
+      <p><strong>Hydrological modeling project</strong><br />
+      August 2023 - September 2023</p>
+      <p>Estimated hydrological losses with the SCS-CN method, derived hyetographs from IDF curves, and modeled the catchment in HEC-HMS.</p>
+      <p><code>HEC-HMS</code> <code>ArcGIS</code> <code>DEM</code> <code>SCS-CN</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Shell roof design</h3>
+      <p><strong>Structural design project</strong><br />
+      September 2023 - October 2023</p>
+      <p>Produced three roof alternatives using form-finding, analyzed the shell in SAP2000, and built a scaled physical model for testing.</p>
+      <p><code>SAP2000</code> <code>Grasshopper</code> <code>Form-finding</code> <code>Physical testing</code></p>
     </td>
   </tr>
 </table>
@@ -63,30 +121,30 @@ I also spend time on Blender, Cinema 4D, Three.js, geospatial systems, and full-
 <table>
   <tr>
     <td width="50%" valign="top">
-      <strong>Data and automation</strong><br />
-      Python &middot; SQL &middot; Pandas &middot; FastAPI &middot; GitHub Actions &middot; AWS
+      <strong>Engineering and modeling</strong><br />
+      AutoCAD &middot; Revit &middot; Civil 3D &middot; ETABS &middot; SAP2000 &middot; SAFE &middot; Prokon &middot; HEC-HMS
     </td>
     <td width="50%" valign="top">
-      <strong>Web and creative development</strong><br />
-      JavaScript &middot; TypeScript &middot; React &middot; Next.js &middot; Node.js &middot; Three.js
+      <strong>Geospatial and research</strong><br />
+      ArcGIS &middot; GIS &middot; DEM analysis &middot; R &middot; MATLAB &middot; Jupyter Notebook
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <strong>3D and design</strong><br />
-      Blender &middot; Cinema 4D &middot; Figma &middot; UI/UX
+      <strong>Data and automation</strong><br />
+      Python &middot; Pandas &middot; NumPy &middot; SciPy &middot; SQL &middot; FastAPI &middot; GitHub Actions &middot; AWS
     </td>
     <td width="50%" valign="top">
-      <strong>Engineering basics</strong><br />
-      Linux &middot; Git &middot; Docker &middot; Relational databases &middot; Cloud fundamentals
+      <strong>Web and creative development</strong><br />
+      JavaScript &middot; TypeScript &middot; React &middot; Next.js &middot; Node.js &middot; Three.js &middot; Blender &middot; Cinema 4D
     </td>
   </tr>
 </table>
 
 <p align="center">
   <img
-    src="https://skillicons.dev/icons?i=py,js,ts,react,nextjs,nodejs,fastapi,docker,aws,git,linux,blender,threejs,figma&perline=7"
-    alt="Python, JavaScript, TypeScript, React, Next.js, Node.js, FastAPI, Docker, AWS, Git, Linux, Blender, Three.js, and Figma"
+    src="https://skillicons.dev/icons?i=py,js,ts,react,nextjs,nodejs,fastapi,docker,aws,git,linux,blender,threejs,figma,flutter&perline=8"
+    alt="Python, JavaScript, TypeScript, React, Next.js, Node.js, FastAPI, Docker, AWS, Git, Linux, Blender, Three.js, Figma, and Flutter"
   />
 </p>
 
@@ -119,9 +177,9 @@ I also spend time on Blender, Cinema 4D, Three.js, geospatial systems, and full-
 
 <div align="center">
 
-**Open to collaborating on civic data, hydrology, geospatial tools, and creative web experiences.**
+**Open to collaborating on water resources, geospatial analytics, structural design, and public-interest software.**
 
-<sub>Colombo, Sri Lanka &middot; UTC+05:30</sub>
+<sub>Sri Lanka &middot; UTC+05:30</sub>
 
 <br /><br />
 
