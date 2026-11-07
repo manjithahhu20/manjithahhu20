@@ -223,165 +223,198 @@ def bot_level(count: int) -> int:
     return 4
 
 
-def route_cells(width: int, height: int) -> list[tuple[int, int]]:
-    route = []
-    for x in range(width):
-        y_values = range(height) if x % 2 == 0 else range(height - 1, -1, -1)
-        route.extend((x, y) for y in y_values)
-    return route
+def cell_level(cell: dict[str, Any]) -> int:
+    return max(cell["personal_level"], bot_level(cell["bot"]))
 
 
-def month_labels(cells: list[dict[str, Any]], width: int) -> list[tuple[int, str]]:
-    labels = []
-    last_month = None
-    for x in range(width):
-        week_days = sorted(
-            (cell for cell in cells if cell["x"] == x),
-            key=lambda cell: cell["date"],
+def build_classic_route(
+    cells: list[dict[str, Any]],
+) -> tuple[list[tuple[int, int]], dict[tuple[int, int], int], list[tuple[int, int]]]:
+    food = {
+        (cell["x"], cell["y"]): cell
+        for cell in cells
+        if cell_level(cell) > 0
+    }
+    if not food:
+        return [(-1, 0), (0, 0)], {}, []
+
+    remaining = set(food)
+    current = (-1, min(y for _, y in food))
+    route = [current]
+    eat_steps: dict[tuple[int, int], int] = {}
+    food_order: list[tuple[int, int]] = []
+
+    def move_to(x: int, y: int) -> None:
+        nonlocal current
+        point = (x, y)
+        route.append(point)
+        current = point
+        if point in remaining:
+            eat_steps[point] = len(route) - 1
+            food_order.append(point)
+            remaining.remove(point)
+
+    while remaining:
+        target = min(
+            remaining,
+            key=lambda point: (
+                abs(point[0] - current[0]) + abs(point[1] - current[1]),
+                point[1],
+                point[0],
+            ),
         )
-        if not week_days:
+
+        while current[0] != target[0]:
+            move_to(current[0] + (1 if target[0] > current[0] else -1), current[1])
+
+        while current[1] != target[1]:
+            move_to(current[0], current[1] + (1 if target[1] > current[1] else -1))
+
+        if current in remaining:
+            eat_steps[current] = len(route) - 1
+            food_order.append(current)
+            remaining.remove(current)
+
+    route.append((current[0] + 1, current[1]))
+    return route, eat_steps, food_order
+
+
+def merge_transform_frames(frames: list[tuple[float, str]]) -> list[tuple[float, str]]:
+    merged = []
+    for time, style in frames:
+        if merged and merged[-1][1] == style:
             continue
-        first = dt.date.fromisoformat(week_days[0]["date"])
-        month = first.strftime("%b")
-        if month != last_month:
-            labels.append((x, month))
-            last_month = month
-    return labels
+        merged.append((time, style))
+    if merged:
+        merged[-1] = (1.0, merged[-1][1])
+    return merged
+
+
+def css_keyframes(name: str, frames: list[tuple[float, str]]) -> str:
+    values = []
+    for time, style in frames:
+        percent = max(0.0, min(1.0, time)) * 100
+        values.append(f"{percent:.2f}%{{{style}}}")
+    return f"@keyframes {name}{{{''.join(values)}}}"
 
 
 def render_svg(cells: list[dict[str, Any]], owner: str, dark: bool) -> str:
     width = max(cell["x"] for cell in cells) + 1
     height = max(cell["y"] for cell in cells) + 1
-    cell_size = 13
-    step = 17
-    left = 42
-    top = 34
-    right = 18
-    bottom = 58
-    svg_width = left + width * step + right
-    svg_height = top + height * step + bottom
-
-    route = route_cells(width, height)
-    route_index = {point: index for index, point in enumerate(route)}
-    points = [(-1, 0), *route, (width, height - 1)]
-
-    def point_xy(point: tuple[int, int]) -> tuple[float, float]:
-        x, y = point
-        return (
-            left + x * step + cell_size / 2,
-            top + y * step + cell_size / 2,
-        )
-
-    path_parts = []
-    previous_xy = None
-    path_length = 0.0
-    for index, point in enumerate(points):
-        x, y = point_xy(point)
-        path_parts.append(f"{'M' if index == 0 else 'L'}{x:.1f},{y:.1f}")
-        if previous_xy:
-            path_length += ((x - previous_xy[0]) ** 2 + (y - previous_xy[1]) ** 2) ** 0.5
-        previous_xy = (x, y)
-    path_data = "".join(path_parts)
-
-    segment_count = len(points) - 1
-    route_by_point = {
-        (cell["x"], cell["y"]): cell for cell in cells
-    }
+    size_cell = 16
+    size_dot = 12
+    dot_margin = (size_cell - size_dot) / 2
+    dot_radius = 2
 
     palette = {
+        "border": "#1b1f230a",
         "empty": "#161b22" if dark else "#ebedf0",
-        "border": "#30363d" if dark else "#d0d7de",
-        "level1": "#0f3d2e" if dark else "#bbf7d0",
-        "level2": "#166534" if dark else "#4ade80",
-        "level3": "#15803d" if dark else "#16a34a",
-        "level4": "#22c55e" if dark else "#166534",
-        "snake": "#fbbf24" if dark else "#f59e0b",
-        "text": "#8b949e" if dark else "#57606a",
+        "level1": "#01311f" if dark else "#9be9a8",
+        "level2": "#034525" if dark else "#40c463",
+        "level3": "#0f6d31" if dark else "#30a14e",
+        "level4": "#00c647" if dark else "#216e39",
+        "snake": "#800080",
     }
 
+    route, eat_steps, food_order = build_classic_route(cells)
+    route_duration = max(12, min(ANIMATION_SECONDS, len(route) * 0.055))
+    route_last = max(1, len(route) - 1)
+    route_by_point = {(cell["x"], cell["y"]): cell for cell in cells}
+
+    svg_width = (width + 2) * size_cell
+    svg_height = (height + 5) * size_cell
     elements = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{svg_width}" '
-        f'height="{svg_height}" viewBox="0 0 {svg_width} {svg_height}">',
+        (
+            f'<svg xmlns="http://www.w3.org/2000/svg" '
+            f'viewBox="{-size_cell} {-size_cell * 2} {svg_width} {svg_height}" '
+            f'width="{svg_width}" height="{svg_height}">'
+        ),
         "<title>Combined GitHub contribution snake</title>",
         (
-            "<desc>Personal contributions and github-actions[bot] commits "
-            "from public default branches over the last year.</desc>"
+            "<desc>Classic contribution snake with personal contributions "
+            "and github-actions[bot] commits.</desc>"
         ),
         "<style>",
         (
             ":root{"
-            f"--ce:{palette['empty']};--cb:{palette['border']};"
+            f"--cb:{palette['border']};--ce:{palette['empty']};"
             f"--c1:{palette['level1']};--c2:{palette['level2']};"
             f"--c3:{palette['level3']};--c4:{palette['level4']};"
-            f"--snake:{palette['snake']};--text:{palette['text']};"
+            f"--cs:{palette['snake']};"
             "}"
         ),
         (
-            ".cell{shape-rendering:geometricPrecision;stroke:var(--cb);"
-            "stroke-width:.65}.label{font:11px -apple-system,BlinkMacSystemFont,"
-            "'Segoe UI',sans-serif;fill:var(--text)}"
-        ),
-        ".food{stroke:none}",
-        (
-            ".snake-body{fill:none;stroke:var(--snake);stroke-width:8;"
-            "stroke-linecap:round;stroke-linejoin:round}"
+            ".c{shape-rendering:geometricPrecision;fill:var(--ce);"
+            "stroke-width:1px;stroke:var(--cb);width:12px;height:12px;"
+            f"animation:none {route_duration:.2f}s linear infinite"
+            "}"
         ),
         (
-            "@media(prefers-reduced-motion:reduce){.food{animation:none!important}"
-            ".snake-body,.snake-head{display:none}}"
+            ".s{shape-rendering:geometricPrecision;fill:var(--cs);"
+            f"animation:none linear {route_duration:.2f}s infinite"
+            "}"
+        ),
+        (
+            ".u{transform-origin:0 0;transform:scale(0,1);"
+            f"animation:none linear {route_duration:.2f}s infinite"
+            "}"
+        ),
+        (
+            "@media(prefers-reduced-motion:reduce){"
+            ".c,.s,.u{animation:none!important}.s{display:none}"
+            "}"
         ),
     ]
 
-    food_keyframes = []
-    for index, point in enumerate(route):
-        cell = route_by_point.get(point)
-        if not cell:
-            continue
-        level = max(cell["personal_level"], bot_level(cell["bot"]))
-        if level <= 0:
-            continue
-        progress = max(0.1, min(99.8, (index + 1) / segment_count * 100))
-        keyframe = f"eat{index}"
-        food_keyframes.extend(
-            [
-                (
-                    f"@keyframes {keyframe}{{"
-                    f"0%,{progress - 0.01:.2f}%{{fill:var(--c{level});opacity:1}}"
-                    f"{progress + 0.01:.2f}%,100%{{fill:var(--ce);opacity:1}}"
-                    "}"
-                ),
-                (
-                    f".{keyframe}{{animation:{keyframe} "
-                    f"{ANIMATION_SECONDS}s linear infinite}}"
-                ),
-            ]
+    for point, step in eat_steps.items():
+        cell = route_by_point[point]
+        level = cell_level(cell)
+        progress = max(0.01, min(99.9, step / route_last * 100))
+        keyframe = f"e{point[0]}_{point[1]}"
+        elements.append(
+            f"@keyframes {keyframe}{{"
+            f"0%,{max(0, progress - 0.01):.2f}%{{fill:var(--c{level})}}"
+            f"{min(100, progress + 0.01):.2f}%,100%{{fill:var(--ce)}}"
+            "}"
         )
-    elements.extend(food_keyframes)
+        elements.append(
+            f".{keyframe}{{fill:var(--c{level});animation-name:{keyframe}}}"
+        )
+
+    part_sizes = [14.4, 13.0, 11.9, 10.8]
+    for part, size in enumerate(part_sizes):
+        positions = []
+        for step in range(len(route)):
+            point = route[max(0, step - part)]
+            x = point[0] * size_cell + (size_cell - size) / 2
+            y = point[1] * size_cell + (size_cell - size) / 2
+            positions.append(
+                (step / route_last, f"transform:translate({x:.1f}px,{y:.1f}px)")
+            )
+        positions = merge_transform_frames(positions)
+        radius = min(4.5, 4 * size / size_dot)
+        elements.append(css_keyframes(f"s{part}", positions))
+        start_x = -size_cell + (size_cell - size) / 2
+        start_y = route[0][1] * size_cell + (size_cell - size) / 2
+        elements.append(
+            f".s.s{part}{{transform:translate({start_x:.1f}px,{start_y:.1f}px);"
+            f"animation-name:s{part}}}"
+        )
+
     elements.append("</style>")
 
-    for label_x, label in month_labels(cells, width):
-        x = left + label_x * step
-        elements.append(
-            f'<text class="label" x="{x}" y="{top - 12}">{html.escape(label)}</text>'
-        )
-
-    for y, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-        elements.append(
-            f'<text class="label" x="{left - 8}" y="{top + y * step + 10}" '
-            f'text-anchor="end">{label}</text>'
-        )
-
     for cell in sorted(cells, key=lambda item: (item["x"], item["y"])):
-        x = left + cell["x"] * step
-        y = top + cell["y"] * step
-        level = max(cell["personal_level"], bot_level(cell["bot"]))
+        x = cell["x"] * size_cell + dot_margin
+        y = cell["y"] * size_cell + dot_margin
+        level = cell_level(cell)
         if level == 0:
             elements.append(
-                f'<rect class="cell" x="{x}" y="{y}" width="{cell_size}" '
-                f'height="{cell_size}" rx="2.5" fill="var(--ce)"/>'
+                f'<rect class="c" x="{x}" y="{y}" rx="{dot_radius}" '
+                f'ry="{dot_radius}"/>'
             )
             continue
-        route_id = route_index[(cell["x"], cell["y"])]
+        point = (cell["x"], cell["y"])
+        keyframe = f"e{point[0]}_{point[1]}"
         day = dt.date.fromisoformat(cell["date"]).strftime("%b %d, %Y")
         tooltip = (
             f"{day}: {cell['personal']} personal contribution"
@@ -390,44 +423,53 @@ def render_svg(cells: list[dict[str, Any]], owner: str, dark: bool) -> str:
             f"{'' if cell['bot'] == 1 else 's'}"
         )
         elements.append(
-            f'<rect class="cell food eat{route_id}" x="{x}" y="{y}" '
-            f'width="{cell_size}" height="{cell_size}" rx="2.5" '
-            f'fill="var(--c{level})"><title>{html.escape(tooltip)}</title></rect>'
+            f'<rect class="c {keyframe}" x="{x}" y="{y}" rx="{dot_radius}" '
+            f'ry="{dot_radius}"><title>{html.escape(tooltip)}</title></rect>'
         )
 
-    elements.append(
-        f'<path class="snake-body" d="{path_data}" '
-        f'stroke-dasharray="76 {path_length + 76:.1f}">'
-        f'<animate attributeName="stroke-dashoffset" from="0" '
-        f'to="-{path_length + 76:.1f}" dur="{ANIMATION_SECONDS}s" '
-        'repeatCount="indefinite"/></path>'
-    )
-    elements.append(
-        f'<circle class="snake-head" r="5.2" fill="var(--snake)">'
-        f'<animateMotion path="{path_data}" dur="{ANIMATION_SECONDS}s" '
-        'repeatCount="indefinite"/></circle>'
-    )
-
-    legend_y = top + height * step + 22
-    elements.append(
-        f'<text class="label" x="{left}" y="{legend_y}">Less</text>'
-    )
-    for level in range(5):
-        x = left + 35 + level * (cell_size + 3)
-        fill = "var(--ce)" if level == 0 else f"var(--c{level})"
+    for part, size in enumerate(part_sizes):
+        margin = (size_cell - size) / 2
+        radius = min(4.5, 4 * size / size_dot)
         elements.append(
-            f'<rect class="cell" x="{x}" y="{legend_y - 10}" '
-            f'width="{cell_size}" height="{cell_size}" rx="2.5" fill="{fill}"/>'
+            f'<rect class="s s{part}" x="{margin:.1f}" y="{margin:.1f}" '
+            f'width="{size:.1f}" height="{size:.1f}" rx="{radius:.1f}" '
+            f'ry="{radius:.1f}"/>'
         )
-    elements.append(
-        f'<text class="label" x="{left + 35 + 5 * (cell_size + 3) + 2}" '
-        f'y="{legend_y}">More</text>'
-    )
-    elements.append(
-        f'<text class="label" x="{svg_width - right}" y="{legend_y}" '
-        f'text-anchor="end">@{html.escape(owner)} + '
-        f'@{html.escape(BOT_LOGIN)}</text>'
-    )
+
+    if food_order:
+        colors = [cell_level(route_by_point[point]) for point in food_order]
+        blocks = []
+        start = 0
+        for index in range(1, len(colors) + 1):
+            if index == len(colors) or colors[index] != colors[start]:
+                blocks.append((colors[start], start, index))
+                start = index
+
+        total_width = width * size_cell
+        unit = total_width / max(1, len(food_order))
+        for block_index, (level, start, end) in enumerate(blocks):
+            x = start * unit
+            block_width = (end - start) * unit + 0.6
+            start_time = eat_steps[food_order[start]] / route_last
+            end_time = eat_steps[food_order[end - 1]] / route_last
+            keyframe = f"u{block_index}"
+            frames = [
+                (0, "transform:scale(0,1)"),
+                (start_time, "transform:scale(0,1)"),
+                (end_time, "transform:scale(1,1)"),
+                (1, "transform:scale(1,1)"),
+            ]
+            elements.append(css_keyframes(keyframe, frames))
+            elements.append(
+                f".u.{keyframe}{{fill:var(--c{level});"
+                f"animation-name:{keyframe};transform-origin:{x:.1f}px 0}}"
+            )
+            elements.append(
+                f'<rect class="u {keyframe}" x="{x:.1f}" '
+                f'y="{(height + 2) * size_cell}" '
+                f'width="{block_width:.1f}" height="{size_dot}"/>'
+            )
+
     elements.append("</svg>")
     return "".join(elements)
 
