@@ -90,26 +90,29 @@ I also spend time on Blender, Cinema 4D, Three.js, geospatial systems, and full-
   />
 </p>
 
-## GitHub snapshot
+## Open data in numbers
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=manjithahhu20&show_icons=true&hide_border=true&bg_color=0D1117&title_color=2DD4BF&icon_color=F59E0B&text_color=C9D1D9&rank_icon=github"
-    alt="Umal Manjitha's GitHub statistics"
-    height="165"
+    src="https://img.shields.io/badge/100-groundwater%20wells-0F766E?style=for-the-badge&labelColor=0F172A"
+    alt="100 groundwater wells archived hourly"
   />
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=manjithahhu20&layout=compact&hide_border=true&bg_color=0D1117&title_color=2DD4BF&text_color=C9D1D9&langs_count=6"
-    alt="Most-used programming languages"
-    height="165"
+    src="https://img.shields.io/badge/13-rain%20gauges-0F766E?style=for-the-badge&labelColor=0F172A"
+    alt="13 rainfall gauges archived"
+  />
+  <img
+    src="https://img.shields.io/badge/~78-river%20gauges-F59E0B?style=for-the-badge&labelColor=0F172A"
+    alt="Approximately 78 river monitoring stations archived"
+  />
+  <img
+    src="https://img.shields.io/badge/Daily-automated%20updates-F59E0B?style=for-the-badge&labelColor=0F172A"
+    alt="Daily automated updates"
   />
 </p>
 
 <p align="center">
-  <img
-    src="https://streak-stats.demolab.com?user=manjithahhu20&theme=github-dark-blue&hide_border=true"
-    alt="GitHub contribution streak"
-  />
+  <sub>Built through HydroSL and the two public gauge archives.</sub>
 </p>
 
 ---
