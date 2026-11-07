@@ -1,4 +1,4 @@
-name: Generate contribution snake
+name: Generate combined contribution snake
 
 on:
   schedule:
@@ -15,13 +15,19 @@ jobs:
       contents: write
 
     steps:
-      - name: Generate the snake
-        uses: Platane/snk/svg-only@v3
+      - name: Check out the profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          python-version: "3.12"
+
+      - name: Generate the combined snake
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+        run: python scripts/generate_combined_snake.py --output-dir dist
 
       - name: Publish to the output branch
         uses: crazy-max/ghaction-github-pages@v4
