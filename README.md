@@ -208,10 +208,12 @@ Alongside my research, I build open hydrology and groundwater infrastructure, co
     srcset="https://raw.githubusercontent.com/manjithahhu20/manjithahhu20/output/github-contribution-grid-snake.svg"
   />
   <img
-    alt="Animated snake eating Umal Manjitha's yearly GitHub contribution graph"
+    alt="Animated snake eating Umal Manjitha's personal and github-actions bot contributions"
     src="https://raw.githubusercontent.com/manjithahhu20/manjithahhu20/output/github-contribution-grid-snake.svg"
   />
 </picture>
+
+<sub>Includes personal contributions and commits authored by <code>github-actions[bot]</code>.</sub>
 
 </div>
 
