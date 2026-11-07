@@ -194,6 +194,27 @@ Alongside my research, I build open hydrology and groundwater infrastructure, co
   <sub>Built through HydroSL and the two public gauge archives.</sub>
 </p>
 
+## Contribution activity
+
+<div align="center">
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/manjithahhu20/manjithahhu20/output/github-contribution-grid-snake-dark.svg"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/manjithahhu20/manjithahhu20/output/github-contribution-grid-snake.svg"
+  />
+  <img
+    alt="Animated snake eating Umal Manjitha's yearly GitHub contribution graph"
+    src="https://raw.githubusercontent.com/manjithahhu20/manjithahhu20/output/github-contribution-grid-snake.svg"
+  />
+</picture>
+
+</div>
+
 ---
 
 <div align="center">
