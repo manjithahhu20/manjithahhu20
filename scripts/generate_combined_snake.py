@@ -243,6 +243,7 @@ def build_classic_route(
     route = [current]
     eat_steps: dict[tuple[int, int], int] = {}
     food_order: list[tuple[int, int]] = []
+    rng = random.Random()
 
     def move_to(x: int, y: int) -> None:
         nonlocal current
@@ -255,7 +256,7 @@ def build_classic_route(
             remaining.remove(point)
 
     while remaining:
-        target = min(
+        nearest = sorted(
             remaining,
             key=lambda point: (
                 abs(point[0] - current[0]) + abs(point[1] - current[1]),
@@ -263,6 +264,7 @@ def build_classic_route(
                 point[0],
             ),
         )
+        target = rng.choice(nearest[: min(6, len(nearest))])
 
         while current[0] != target[0]:
             move_to(current[0] + (1 if target[0] > current[0] else -1), current[1])
