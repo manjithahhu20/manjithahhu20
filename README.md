@@ -1,13 +1,13 @@
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F172A,55:0F766E,100:F59E0B&text=Umal%20Manjitha&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=Civil%20engineer%20%7C%20water-data%20builder%20%7C%20creative%20developer&descAlignY=60&descSize=16&animation=fadeIn"
-  alt="Umal Manjitha - civil engineer, water-data builder, and creative developer"
+  src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F172A,55:0F766E,100:F59E0B&text=Umal%20Manjitha&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=Research%20Assistant%20%7C%20MPhil%20Candidate%20%7C%20Water%20Resources&descAlignY=60&descSize=16&animation=fadeIn"
+  alt="Umal Manjitha - research assistant, MPhil candidate, and water resources engineer"
   width="100%"
 />
 
-**Civil engineering graduate building better tools for water, infrastructure, and the environment.**  
-B.Sc. Engineering (Hons.), University of Moratuwa &middot; GPA 3.30 / 4.00
+**Research Assistant and MPhil candidate in water resources engineering at the University of Moratuwa.**  
+Hydraulic and Water Resources Engineering Division
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-0F766E?style=for-the-badge&logo=vercel&logoColor=white)](https://umal.netlify.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/umal-manjitha/)
@@ -19,18 +19,39 @@ B.Sc. Engineering (Hons.), University of Moratuwa &middot; GPA 3.30 / 4.00
 
 ## About me
 
-I am a civil engineering graduate from the University of Moratuwa with experience across structural design, hydrology, geospatial analysis, and data-driven modeling. My current work focuses on open hydrology and groundwater infrastructure for Sri Lanka, combining careful engineering with reliable software.
+I am a Research Assistant and MPhil candidate at the University of Moratuwa, working within the Department of Civil Engineering's Hydraulic and Water Resources Engineering Division. My research focuses on developing a modified SCS curve number for small catchments in Sri Lanka.
 
-I enjoy turning messy real-world data into tools people can use, and I also work across 3D, visualization, and full-stack web development.
+Alongside my research, I build open hydrology and groundwater infrastructure, combining careful engineering with reliable software. My wider interests span structural design, geospatial analysis, hydrological modeling, data-driven prediction, and creative visualization.
 
+- **Current research:** adapting the SCS curve number method for small catchments in Sri Lanka.
 - **Water and environmental systems:** hydrology, flood modeling, groundwater data, and open gauge networks.
 - **Structural and geospatial engineering:** analysis, design, GIS, terrain data, and site planning.
 - **Data and software:** Python, machine learning, APIs, automation, and public-interest applications.
-- **Visual communication:** Blender, Cinema 4D, Three.js, UI/UX, and technical visualization.
 
 ---
 
-## Education and experience
+## Current role and research
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Research Assistant</h3>
+      <p><strong>Hydraulic and Water Resources Engineering Division</strong><br />
+      Department of Civil Engineering<br />
+      University of Moratuwa</p>
+      <p>Working within the division on research related to hydrology, hydraulic modeling, and water resources engineering.</p>
+      <p><code>Hydrology</code> <code>Water resources</code> <code>Research</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>MPhil Candidate</h3>
+      <p><strong>Developing a modified SCS curve number for small catchments in Sri Lanka</strong></p>
+      <p>Researching rainfall-runoff estimation and adapting the SCS-CN approach for the hydrological conditions of small Sri Lankan catchments.</p>
+      <p><code>SCS-CN</code> <code>Rainfall-runoff</code> <code>Small catchments</code> <code>Hydrological modeling</code></p>
+    </td>
+  </tr>
+</table>
+
+## Education and engineering experience
 
 <table>
   <tr>
@@ -79,7 +100,7 @@ I enjoy turning messy real-world data into tools people can use, and I also work
   </tr>
 </table>
 
-## Engineering and research
+## Selected engineering and research work
 
 <table>
   <tr>
@@ -177,7 +198,7 @@ I enjoy turning messy real-world data into tools people can use, and I also work
 
 <div align="center">
 
-**Open to collaborating on water resources, geospatial analytics, structural design, and public-interest software.**
+**Open to collaborating on hydrological modeling, SCS-CN research, water resources, geospatial analytics, and public-interest software.**
 
 <sub>Sri Lanka &middot; UTC+05:30</sub>
 
