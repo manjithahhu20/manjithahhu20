@@ -1,114 +1,130 @@
-
-<!--horizontal divider(gradiant)-->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-<!--h1 without bottom border-->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=56&duration=2500&pause=500&vCenter=true&width=800&height=80&lines=Hello,+I'm+Umal+Manjitha)](https://git.io/typing-svg)
-<hr>
-
-<!--- snake --> 
 <div align="center">
-  <img  src="https://github.com/manjithahhu20/manjithahhu20/blob/efbd8d2ac8603e1f7d2019d705bbdd2d362d38b1/github-contribution-grid-snake.svg"
-       alt="snake" /></a>
+
+<img
+  src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F172A,55:0F766E,100:F59E0B&text=Umal%20Manjitha&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=3D%20artist%20%7C%20software%20builder%20%7C%20open%20water%20data&descAlignY=60&descSize=16&animation=fadeIn"
+  alt="Umal Manjitha - 3D artist, software builder, and open water data advocate"
+  width="100%"
+/>
+
+**Building useful things at the intersection of software, 3D, and water data.**  
+Based in Colombo, Sri Lanka.
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-0F766E?style=for-the-badge&logo=vercel&logoColor=white)](https://umal.netlify.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/umal-manjitha/)
+[![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@hhumal)
+[![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0003-5220-2317)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hhumal@outlook.com)
+
 </div>
 
+## About me
 
-<!--h2 without bottom border-->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2500&pause=1000&color=F70909&center=true&vCenter=true&width=800&height=80&lines=Piracy+Shall+Live+Forever+!!)](https://git.io/typing-svg)
+I am a 3D artist and programmer who enjoys turning messy, real-world information into tools people can actually use. My current work focuses on open hydrology and groundwater infrastructure for Sri Lanka, backed by careful data provenance, automation, and a clean public interface.
 
+I also spend time on Blender, Cinema 4D, Three.js, geospatial systems, and full-stack web applications.
 
-<!--Intro start-->
-- 🌐 Visit My Website **https://umal.netlify.app**
+- **Open data for public good:** making environmental datasets easier to access, preserve, and understand.
+- **Engineering with provenance:** keeping raw inputs, transformations, and data quality visible.
+- **Creative technology:** combining 3D, interaction design, and software into thoughtful experiences.
 
-- 🔭 I’m currently working on **Blender, Cinema 4D, AWS, Relational Databases**
+---
 
-- 🌱 I’m currently learning **to Mange 3D Scenes inside a Application Pipeline.**
+## Currently building
 
-- ☁️ I've keen interest in cloud computing. So,I'm learning **AWS, Oracle Cloud**
-
-- 📝 I regularly write articles on https://medium.com/@hhumal
-
-- 💬 Ask me about **Blender, Cinema 4D , Random Computer Shits , Anything At All**
-
-- 📫 Feel free to reach me out **hhumal@outlook.com**
-<!--Intro end-->
-
-
-
-<!--- stats & Trophy (start) -->
-<p align="center">
-  <!--- stats (start) -->
-<table align="center">
-<tr border="none">
-<td width="50%" align="center">
-  
-  <img  align="center"  src="https://github-readme-stats.vercel.app/api?username=manjithahhu20&theme=dark&show_icons=true&count_private=true" />
-  <br></br>
-  <img  title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Mark streak" src="https://github-readme-streak-stats.herokuapp.com/?user=manjithahhu20&theme=dark&hide_border=false" /> 
-</td>
-
-<td width="50%" align="center">
-
-  <img  align="center"  src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=manjithahhu20&theme=dark&hide_border=false&no-bg=true&no-frame=true&langs_count=10"/>
-  
-  </td>
-</tr>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/manjithahhu20/HydroSL">HydroSL</a></h3>
+      <p>Open-source hydrology infrastructure for Sri Lanka: source adapters, normalized observations, quality checks, an API, and a public water-resource dashboard.</p>
+      <p><code>Python</code> <code>FastAPI</code> <code>Data quality</code> <code>Dashboard</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/manjithahhu20/Groundwater-data-archive-sri-lanka">Groundwater Archive</a></h3>
+      <p>An automated, self-updating archive of hourly groundwater and rainfall readings from the Sri Lankan national monitoring network.</p>
+      <p><code>100 wells</code> <code>13 rain gauges</code> <code>GitHub Actions</code></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/manjithahhu20/Irrigation-automatic-gauge-archive">RIVERNET Archive</a></h3>
+      <p>A public archive of river levels and rainfall from approximately 78 flood-monitoring stations, collected at one- and five-minute intervals.</p>
+      <p><code>Hydrology</code> <code>Automation</code> <code>Disaster resilience</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/manjithahhu20/my-portfolio-website">Portfolio and experiments</a></h3>
+      <p>Personal web work, interactive 3D sketches, and small experiments in visual design, JavaScript, and rendering.</p>
+      <p><code>Three.js</code> <code>JavaScript</code> <code>UI/UX</code></p>
+    </td>
+  </tr>
 </table>
-<!--- stats (end) -->
 
-<!--- trophy (start) -->
-<div align=center>
-  <a href="https://github.com/ryo-ma/github-profile-trophy" title="Go to Source">
-      <img align="center" width=84% src="https://github-profile-trophy.vercel.app/?username=manjithahhu20&theme=radical&row=1&column=7&margin-h=15&margin-w=5&no-bg=true" alt="TROPHY" />
-    </a>
-</div>
-<!--- trophy (start) -->
+## Toolbox
 
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>Data and automation</strong><br />
+      Python &middot; SQL &middot; Pandas &middot; FastAPI &middot; GitHub Actions &middot; AWS
+    </td>
+    <td width="50%" valign="top">
+      <strong>Web and creative development</strong><br />
+      JavaScript &middot; TypeScript &middot; React &middot; Next.js &middot; Node.js &middot; Three.js
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>3D and design</strong><br />
+      Blender &middot; Cinema 4D &middot; Figma &middot; UI/UX
+    </td>
+    <td width="50%" valign="top">
+      <strong>Engineering basics</strong><br />
+      Linux &middot; Git &middot; Docker &middot; Relational databases &middot; Cloud fundamentals
+    </td>
+  </tr>
+</table>
 
-</p>        
-<!--- stats (end) -->
-
-
-<!--h1 without bottom border-->
-<div id="user-content-toc">
-  <ul align="center">
-    <summary><h2 style="display: inline-block">Technologies That I Know👨🏻‍💻</h2></summary>
-  </ul>
-</div>
-<!--tech stack icons-->
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,aws,bootstrap,c,cpp,css,discord,docker,dynamodb,express,figma,firebase,github,html,idea,java,js,kotlin,linux,md,materialui,mongodb,mysql,nextjs,nodejs,postman,py,react,redux,tailwind,ts,vscode&perline=14" />
-  </a>
+  <img
+    src="https://skillicons.dev/icons?i=py,js,ts,react,nextjs,nodejs,fastapi,docker,aws,git,linux,blender,threejs,figma&perline=7"
+    alt="Python, JavaScript, TypeScript, React, Next.js, Node.js, FastAPI, Docker, AWS, Git, Linux, Blender, Three.js, and Figma"
+  />
 </p>
 
+## GitHub snapshot
 
-<!-- Connect with me -->
-<!--h2 without bottom border-->
-<div id="user-content-toc">
-  <ul align="center">
-    <summary><h2 style="display: inline-block">Connect With Me🤝</h2></summary>
-  </ul>
-</div>
-
-<!--icons and links-->
 <p align="center">
-<a href="https://www.linkedin.com/in/umal-manjitha/" target="blank"><img align="center" src="https://user-images.githubusercontent.com/88904952/234979284-68c11d7f-1acc-4f0c-ac78-044e1037d7b0.png" alt="linkedin" height="50" width="50" /></a>
-<a href="https://twitter.com/umalmanjitha" target="blank"><img align="center" src="https://user-images.githubusercontent.com/88904952/234980676-61bfb021-ecc8-48f7-88e6-34c1b06c4a58.png" alt="twitter" height="50" width="50" /></a> 
-<a href="https://www.instagram.com/whileloop8/" target="blank"><img align="center" src="https://user-images.githubusercontent.com/88904952/234981169-2dd1e58f-4b7e-468c-8213-034ba62156c3.png" alt="instagram" height="50" width="50" /></a>
-<a href="my-website" target="blank"><img align="center" src="https://user-images.githubusercontent.com/88904952/234982196-562aea17-5532-4550-8c08-1c7cb994a541.png" alt="hashnode" height="50" width="50" /></a>
-<a href="my-discord" target="blank"><img align="center" src="https://user-images.githubusercontent.com/88904952/234982627-019fd336-6248-453c-9b05-97c13fd1d207.png" alt="discord" height="50" width="50" /></a>
-  
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=manjithahhu20&show_icons=true&hide_border=true&bg_color=0D1117&title_color=2DD4BF&icon_color=F59E0B&text_color=C9D1D9&rank_icon=github"
+    alt="Umal Manjitha's GitHub statistics"
+    height="165"
+  />
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=manjithahhu20&layout=compact&hide_border=true&bg_color=0D1117&title_color=2DD4BF&text_color=C9D1D9&langs_count=6"
+    alt="Most-used programming languages"
+    height="165"
+  />
 </p>
 
+<p align="center">
+  <img
+    src="https://streak-stats.demolab.com?user=manjithahhu20&theme=github-dark-blue&hide_border=true"
+    alt="GitHub contribution streak"
+  />
+</p>
 
-<!--profile visit count-->
+---
+
 <div align="center">
-  
-[![](https://visitcount.itsvg.in/api?id=manjithahhu20&icon=3&color=6)](https://visitcount.itsvg.in)
-  
+
+**Open to collaborating on civic data, hydrology, geospatial tools, and creative web experiences.**
+
+<sub>Colombo, Sri Lanka &middot; UTC+05:30</sub>
+
+<br /><br />
+
+<img
+  src="https://komarev.com/ghpvc/?username=manjithahhu20&label=Profile%20views&color=0F766E&style=flat-square"
+  alt="Profile views"
+/>
+
 </div>
-
-<!--horizontal divider(gradiant)-->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
